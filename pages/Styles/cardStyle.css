@@ -1,0 +1,155 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #98c3db;
+    font-family: Arial, sans-serif;
+  }
+  
+  .UvodStr{
+    background-color: #FFD28F;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: block;
+    color: black;
+    font-size:larger;
+    font-weight: bolder;
+    text-align: center;
+  }
+  
+  #moznosti{
+    width: 100%;
+    max-width: 400px; 
+    height:fit-content;
+    font-size: large;
+  }
+  
+  .nav {
+    background-color: #FFD28F; 
+  }
+  
+  .nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; 
+  }
+  .nav-item {
+    margin: 0;
+    flex: 1; 
+  }
+  
+  .nav-item a {
+    display: block;
+    padding: 15px 20px; 
+    text-decoration: none;
+    color: black; 
+    font-weight: bold;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center; 
+  }
+  
+  .nav-item a:hover,
+  .nav-item.active a {
+    background-color: #98c3db ; 
+  }
+  
+  @media screen and (max-width: 600px) {
+    .nav-item {
+      flex-basis: 100%; 
+    }
+  }
+
+  h1 {
+    color: #333; 
+    margin-left: 30px;
+  }
+  
+  p {
+    margin: 0; 
+  }
+  
+  #L {
+    float: left; 
+    clear: left; 
+    width: 165px; 
+    font-weight: bold; 
+    font-size: large;
+    margin-left: 70px;
+  }
+  
+  #R {
+    margin-left: 175px; 
+    font-size: large;
+  }
+
+  #H button {
+    background-color: #FFD28F; 
+    color: black; 
+    padding: 5px 15px; 
+    font-size: large;
+    margin: 10px; 
+    margin-left: 75px;
+    display: block; 
+  }
+
+  #cardSelection {
+    width: 100%;
+    max-width: 200px; /* Adjust as needed */
+    margin-left: 75px ; /* Center the dropdown */
+    display: block; /* Ensure it's on a new line */
+    margin-bottom: 10px; /* Add some space below the dropdown */
+    font-size: large;
+  }
+
+  #cardLimits {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #333;
+  }
+  
+  #cardLimits h2 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  #cardLimits label {
+    font-weight: bold;
+    display: block;
+    margin-left: 15px;
+    margin-bottom: 5px;
+  }
+  
+  #cardLimits input {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: large;
+  }
+
+  footer {
+    background-color: #FFD28F;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: small;
+  }
+
+  #odhlasenie{
+    background-color:lightcoral;
+    color: black;
+    font-weight: 500;
+    font-size: large;
+    margin-right: 100px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+  }

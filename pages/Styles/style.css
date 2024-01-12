@@ -1,0 +1,64 @@
+body {
+  background-color: #98c3db ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Nastavenie výšky na 100% výšky okna */
+  margin: 0; /* Odstránenie margin od tela stránky */
+}
+
+#LogoContainer {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+#Logo img {
+  margin-right: 10px; /* Oddeľovač medzi obrázkom a textom */
+}
+
+#LogoText {
+  text-align: left; /* Zarovná text na ľavú stranu */
+}
+
+.Inputs{
+  display: inline-block;
+}
+
+.button-container {
+  text-align: center;
+  padding-top: 20px; /* Adjust as needed for spacing */
+}
+
+.login-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.large-input {
+  width: 300px; /* Adjust the width as needed */
+  padding: 8px; /* Adjust the padding as needed */
+}
+
+.button-container {
+  text-align: center;
+  padding-top: 20px; /* Adjust as needed for spacing */
+}
+
+.login-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}

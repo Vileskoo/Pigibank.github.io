@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <title>Pigi Bank</title>
+  <link rel="stylesheet" href="Styles/homepageStyle.css">
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="Scripts/homepageScript.js"></script>
+</head>
+<body>
+
+  <div class="UvodStr">
+    <a href="../index.html"><button id="odhlasenie">Odhlásenie</button></a>
+    <label for="moznosti">Aktuálny účet:</label>
+    <select id="moznosti">
+      <option value="moznost1">Účet č.1 : SK57 1100 0000 0026 8546 4586</option>
+      <option value="moznost2">Účet č.2 : SK87 1100 0000 0085 4523 4788</option>
+      <option value="moznost3">Účet č.3 : SK57 1100 0000 0096 1246 7836</option>
+    </select>
+    
+  </div>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item" id="home"><a href="NewDomov.html" onclick="changeContent('home')">Domov</a></li>
+      <li class="nav-item" id="cardSettings"><a href="cardSettings.html" onclick="changeContent('cardSettings')">Nastavenia Kariet</a></li>
+      <li class="nav-item" id="transactionList"><a href="NewTransaction.html" onclick="changeContent('transactionList')">Zoznam Transakcii</a></li>
+      <li class="nav-item" id="payments"><a href="NewPayment.html" onclick="changeContent('payments')">Platba</a></li>
+    </ul>
+  </nav>
+
+  <div id="H">
+    <h1>Informácie k účtu</h1>
+    <p id="L">Názov účtu : </p><p id="R">Účet č.1</p>
+    <p id="L">Iban účtu : </p><p id="R">SK57 1100 0000 0026 8546 4586</p>
+    <p id="L">Zostatok na účte : </p><p id="R">8 000 000,54 €</p>
+  </div>
+
+  <div id="container">
+    <div id="chart-container">
+      <h1>Spending Report</h1>
+      <div id="chart"></div>
+    </div>
+    
+    <div id="text-fields">
+      <p id="tt"><span id="name">Výdavky spolu : 165 €</span></p>
+      <div id="fldINP">
+      <p><span id="name">Iné Výdavky</span></p>
+      <p id="tt">Suma: <span id="amount">15 €</span></p>
+      </div>
+      <div id="fldINP">
+      <p><span id="name">Auto</span></p>
+      <p id="tt">Suma: <span id="amount">30 €</span></p>
+      </div>
+      <div id="fldINP">
+      <p><span id="name">Supermarket</span></p>
+      <p id="tt">Suma: <span id="amount">40 €</span></p>
+      </div>
+      <div id="fldINP">
+      <p><span id="name">Sporenie, Investovanie</span></p>
+      <p id="tt">Suma: <span id="amount">80 €</span></p>
+      </div>
+      <div id="fldINP">
+        <p><span id="name">Zdravie</span></p>
+        <p id="tt">Suma: <span id="amount">0 €</span></p>
+        </div>
+        <div id="fldINP">
+          <p><span id="name">Internetové platby</span></p>
+          <p id="tt">Suma: <span id="amount">0 €</span></p>
+          </div>
+    </div>
+  </div>
+
+  <script>
+    // D3.js kód pre vytvorenie kruhového grafu s hodnotami
+    const data = [15, 30, 40, 80];
+    const categoryNames = ["Kategória 1", "Kategória 2", "Kategória 3"];
+
+    const width = 300;
+    const height = 300;
+    const radius = Math.min(width, height) / 2;
+
+    const color = d3.scaleOrdinal(['#4CAF50', '#2196F3', '#FFC107', '#8569FF']);
+
+    const svg = d3.select("#chart")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .append("g")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+    const pie = d3.pie();
+
+    const arc = d3.arc()
+      .innerRadius(0)
+      .outerRadius(radius);
+
+    const arcs = svg.selectAll("arc")
+      .data(pie(data))
+      .enter()
+      .append("g")
+      .attr("class", "arc");
+
+    arcs.append("path")
+      .attr("fill", (d, i) => color(i))
+      .attr("d", arc);
+
+    arcs.append("text")
+      .attr("transform", d => "translate(" + arc.centroid(d) + ")")
+      .attr("text-anchor", "middle")
+      .text((d, i) => data[i] + " €")
+      .style("font-size", "16px")
+      .style("fill", "Black");
+  </script>
+
+  <footer>
+    <p>&copy; 2023 Pigi Bank. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <title>Pigi Bank</title>
+  <link rel="stylesheet" href="Styles/paymentsStyles.css">
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="Scripts/homepageScript.js"></script>
+
+  <style>
+    #popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 100px;
+        background-color: #FFD28F;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+        font-size: large;
+    }
+</style>
+
+</head>
+
+<body>
+
+  <div class="UvodStr">
+    <a href="../index.html"><button id="odhlasenie">Odhlásenie</button></a>
+    <label for="moznosti">Aktuálny účet:</label>
+    <select id="moznosti">
+      <option value="moznost1">Účet č.1 : SK57 1100 0000 0026 8546 4586</option>
+      <option value="moznost2">Účet č.2 : SK87 1100 0000 0085 4523 4788</option>
+      <option value="moznost3">Účet č.3 : SK57 1100 0000 0096 1246 7836</option>
+    </select>
+  </div>
+  <nav class="nav">
+    <ul class="nav-list">
+        <li class="nav-item" id="home"><a href="NewDomov.html" onclick="changeContent('home')">Domov</a></li>
+        <li class="nav-item" id="cardSettings"><a href="cardSettings.html" onclick="changeContent('cardSettings')">Nastavenia Kariet</a></li>
+        <li class="nav-item" id="transactionList"><a href="NewTransaction.html" onclick="changeContent('transactionList')">Zoznam Transakcii</a></li>
+        <li class="nav-item" id="payments"><a href="NewPayment.html" onclick="changeContent('payments')">Platba</a></li>
+    </ul>
+  </nav>
+
+  <h2>Platobný Príkaz</h2>
+
+  <form class="payment-form" id="paymentForm" onsubmit="resetForm(event),openPopup()">
+      <label for="amount">Suma:</label>
+      <input type="text" id="amount" name="amount" >
+
+      <label for="recipient">Príjemca:</label>
+      <input type="text" id="recipient" name="recipient" >
+
+      <label for="account">Účet:</label>
+      <input type="text" id="account" name="account" >
+
+      <label for="due-date">Dátum splatnosti:</label>
+      <input type="date" id="due-date" name="due-date" min="<?php echo date('Y-m-d'); ?>" >
+
+      <label for="variable-symbol">Variabilný symbol:</label>
+      <input type="text" id="variable-symbol" name="variable-symbol" >
+
+      <label for="constant-symbol">Konštantný symbol:</label>
+      <input type="text" id="constant-symbol" name="constant-symbol" >
+
+      <label for="note">Poznámka:</label>
+      <textarea id="note" name="note" rows="4"></textarea>
+
+      <button value="odoslane">Odoslať Platobný Príkaz</button>
+  </form>
+
+    <div id="popup">
+        <p>Platba Bola Poslaná Na Spracovanie.</p>
+        <button id="pop" onclick="closePopup()">Exit</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Pigi Bank. All rights reserved.</p>
+      </footer>
+
+    <script>
+        // Funkcia na otvorenie pop-up okna
+        function openPopup() {
+            document.getElementById('popup').style.display = 'block';
+            // Pridať udalosť na celú stránku na zatvorenie pop-up okna
+            document.addEventListener('click', closePopupOutside);
+        }
+        
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            // Odstrániť udalosť na celú stránku po zatvorení pop-up okna
+            document.removeEventListener('click', closePopupOutside);
+        }
+    
+    
+        // Funkcia na zatvorenie pop-up okna po kliknutí inde na stránke
+        function closePopupOutside(event) {
+            var popup = document.getElementById('popup');
+            if (!popup.contains(event.target)) {
+                closePopup();
+            }
+        }
+
+        function resetForm(event) {
+            // Prevent the default form submission
+            event.preventDefault();
+    
+            // Reset the form
+            document.getElementById("paymentForm").reset();
+        }
+    </script>
+
+</body>

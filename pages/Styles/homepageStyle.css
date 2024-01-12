@@ -1,0 +1,172 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #98c3db;
+  font-family: Arial, sans-serif;
+}
+
+.UvodStr{
+  background-color: #FFD28F;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: block;
+  color: black;
+  font-size:larger;
+  font-weight: bolder;
+  text-align: center;
+}
+
+#moznosti{
+  width: 100%;
+  max-width: 400px; /* Nastavte želanú maximálnu šírku */
+  height:fit-content;
+  font-size: large;
+}
+
+.nav {
+  background-color: #FFD28F; /* Farba pozadia navigácie, môžete upraviť podľa vašich preferencií */
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* Položky, ktoré nezmestia na obrazovku, budú presunuté na ďalší riadok */
+}
+
+.nav-item {
+  margin: 0;
+  flex: 1; /* Položky budú mať rovnomerný podiel šírky */
+}
+
+.nav-item a {
+  display: block;
+  padding: 15px 20px; /* Prispôsobte polomer a výšku podľa vašich preferencií */
+  text-decoration: none;
+  color: black; /* Farba textu, môžete upraviť podľa vašich preferencií */
+  font-weight: bold;
+  border-width: 1px;
+  border-style: solid;
+  text-align: center; /* Text bude zarovnaný na stred */
+}
+
+.nav-item a:hover,
+.nav-item.active a {
+  background-color: #98c3db ; /* Farba pozadia pri najazdení myši a aktívnej položke, môžete upraviť podľa vašich preferencií */
+}
+
+/* Media query pre menšie obrazovky */
+@media screen and (max-width: 600px) {
+  .nav-item {
+    flex-basis: 100%; /* Položky budú zaberáť 100% šírky na menších obrazovkách */
+  }
+}
+
+#chart-container {
+  text-align: center; /* Zarovnanie grafu na stred stránky */
+}
+
+h1 {
+  color: #333; /* farba nadpisu */
+  margin-left: 30px;
+}
+
+p {
+  margin: 0; /* odstráni prednastavený odsadenie od odstavca */
+}
+
+#L {
+  float: left; /* zarovnanie na ľavú stranu */
+  clear: left; /* zastavenie obtekania ďalších elementov z ľavej strany */
+  width: 165px; /* nastavenie pevnej šírky pre ľavý text */
+  font-weight: bold; /* tučné písmo pre ľavý text */
+  font-size: large;
+  margin-left: 70px;
+}
+
+#R {
+  margin-left: 175px; /* vytvára malú medzeru medzi ľavým a pravým textom */
+  font-size: large;
+}
+
+#container {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  padding-bottom: 20px;
+  border: 1px solid #333;
+}
+
+#chart-container {
+  flex: 1;
+  text-align: center;
+}
+
+#text-fields {
+  flex: 1;
+}
+
+#text-fields p {
+  margin: 10px 0;
+}
+
+#h, #container{
+  margin-bottom: 50px;
+}
+
+#chart-container {
+  text-align: center;
+}
+
+#text-fields {
+  flex: 1;
+  margin-left: 20px;
+  padding-right: 10;
+}
+
+#text-fields p {
+  margin: 5px;
+}
+
+#text-fields p#tt {
+  margin-bottom: 25px;
+  margin-left: 35px
+}
+
+#text-fields span {
+  font-weight: bold; 
+}
+
+#text-fields span#name {
+  display: block; 
+}
+
+#text-fields span#amount {
+  margin-left: 5px; 
+}
+
+footer {
+  background-color: #FFD28F;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+  font-size: small;
+}
+
+#odhlasenie{
+  background-color:lightcoral;
+  color: black;
+  font-weight: 500;
+  font-size: large;
+  margin-right: 100px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+}

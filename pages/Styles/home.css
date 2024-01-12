@@ -1,0 +1,56 @@
+/* home.css */
+
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  div {
+    margin-bottom: 0px; /* pridáva medzeru medzi jednotlivými blokmi */
+  }
+  
+  h1 {
+    color: #333; /* farba nadpisu */
+    margin-left: 30px;
+  }
+  
+  p {
+    margin: 0; /* odstráni prednastavený odsadenie od odstavca */
+  }
+  
+  #L {
+    float: left; /* zarovnanie na ľavú stranu */
+    clear: left; /* zastavenie obtekania ďalších elementov z ľavej strany */
+    width: 165px; /* nastavenie pevnej šírky pre ľavý text */
+    font-weight: bold; /* tučné písmo pre ľavý text */
+    font-size: large;
+    margin-left: 70px;
+  }
+  
+  #R {
+    margin-left: 175px; /* vytvára malú medzeru medzi ľavým a pravým textom */
+    font-size: large;
+  }
+  
+  #container {
+    display: flex;
+    align-items: center;
+  }
+
+  #chart-container {
+    flex: 1;
+    text-align: center;
+  }
+
+  #text-fields {
+    flex: 1;
+  }
+
+  #text-fields p {
+    margin: 10px 0;
+  }
+
+  #h, #container{
+    margin-bottom: 50px;
+  }
+
+  

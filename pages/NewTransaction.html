@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <title>Pigi Bank</title>
+  <link rel="stylesheet" href="Styles/transactionStyle.css">
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="Scripts/homepageScript.js"></script>
+</head>
+
+<body>
+
+  <div class="UvodStr">
+    <a href="../index.html"><button id="odhlasenie">Odhlásenie</button></a>
+    <label for="moznosti">Aktuálny účet:</label>
+    <select id="moznosti">
+      <option value="moznost1">Účet č.1 : SK57 1100 0000 0026 8546 4586</option>
+      <option value="moznost2">Účet č.2 : SK87 1100 0000 0085 4523 4788</option>
+      <option value="moznost3">Účet č.3 : SK57 1100 0000 0096 1246 7836</option>
+    </select>
+  </div>
+  <nav class="nav">
+    <ul class="nav-list">
+        <li class="nav-item" id="home"><a href="NewDomov.html" onclick="changeContent('home')">Domov</a></li>
+        <li class="nav-item" id="cardSettings"><a href="cardSettings.html" onclick="changeContent('cardSettings')">Nastavenia Kariet</a></li>
+        <li class="nav-item" id="transactionList"><a href="NewTransaction.html" onclick="changeContent('transactionList')">Zoznam Transakcii</a></li>
+        <li class="nav-item" id="payments"><a href="NewPayment.html" onclick="changeContent('payments')">Platba</a></li>
+    </ul>
+  </nav>
+
+  <div id="inputy">
+    <!-- Input pre vyhľadávanie platiteľa -->
+    <label for="platitel">Vyhľadať platiteľa:</label>
+    <input type="text" id="platitel" name="platitel">
+
+    <!-- Input pre zadanie dátumu -->
+    <label for="datum">Zadajte dátum:</label>
+    <input type="date" id="datum" name="datum">
+</div>
+
+<div id="scrollovanyZoznam">
+    <ul id="mojZoznam">
+        <li class="prijata" onclick="openReceivedPayment()">
+            <p id="LL">Prijatá Platba</p>
+            <div class="test">
+                <p id="ST">Odosielateľ : Praca s.r.o. </p> 
+                <p id="ST"> Iban : SK57 2200 0000 0062 5487 9653</p>
+            </div>
+            <p id="ST">+ 120.50€</p>
+        </li>
+        <li class="odoslana" onclick="openSendPayment()">
+            <p id="LL">Odoslaná Platba</p>
+            <div class="test">
+                <p id="ST">Prímateľ : M. Štefaňák</p> 
+                <p id="ST">Iban : SK44 1100 0000 0087 4123 7735</p>
+            </div>
+            <p id="ST">- 75.50€</p>
+        </li>
+        <li class="prijata" onclick="openReceivedPayment()">
+            <p id="LL">Prijatá Platba</p>
+            <div class="test">
+                <p id="ST">Odosielateľ : Praca s.r.o. </p> 
+                <p id="ST"> Iban : SK57 2200 0000 0062 5487 9653</p>
+            </div>
+            <p id="ST">+ 120.50€</p>
+        </li>
+        <li class="odoslana" onclick="openSendPayment()">
+            <p id="LL">Odoslaná Platba</p>
+            <div class="test">
+                <p id="ST">Prímateľ : M. Štefaňák</p> 
+                <p id="ST">Iban : SK44 1100 0000 0087 4123 7735</p>
+            </div>
+            <p id="ST">- 75.50€</p>
+        </li>
+        <li class="prijata" onclick="openReceivedPayment()">
+            <p id="LL">Prijatá Platba</p>
+            <div class="test">
+                <p id="ST">Odosielateľ : Praca s.r.o. </p> 
+                <p id="ST"> Iban : SK57 2200 0000 0062 5487 9653</p>
+            </div>
+            <p id="ST">+ 120.50€</p>
+        </li>
+        <li class="odoslana" onclick="openSendPayment()">
+            <p id="LL">Odoslaná Platba</p>
+            <div class="test">
+                <p id="ST">Prímateľ : M. Štefaňák</p> 
+                <p id="ST">Iban : SK44 1100 0000 0087 4123 7735</p>
+            </div>
+            <p id="ST">- 75.50€</p>
+        </li>
+        <li class="prijata" onclick="openReceivedPayment()">
+            <p id="LL">Prijatá Platba</p>
+            <div class="test">
+                <p id="ST">Odosielateľ : Praca s.r.o. </p> 
+                <p id="ST"> Iban : SK57 2200 0000 0062 5487 9653</p>
+            </div>
+            <p id="ST">+ 120.50€</p>
+        </li>
+        <li class="odoslana" onclick="openSendPayment()">
+            <p id="LL">Odoslaná Platba</p>
+            <div class="test">
+                <p id="ST">Prímateľ : M. Štefaňák</p> 
+                <p id="ST">Iban : SK44 1100 0000 0087 4123 7735</p>
+            </div>
+            <p id="ST">- 75.50€</p>
+        </li>
+        <li class="prijata" onclick="openReceivedPayment()">
+            <p id="LL">Prijatá Platba</p>
+            <div class="test">
+                <p id="ST">Odosielateľ : Praca s.r.o. </p> 
+                <p id="ST"> Iban : SK57 2200 0000 0062 5487 9653</p>
+            </div>
+            <p id="ST">+ 120.50€</p>
+        </li>
+        <li class="odoslana" onclick="openSendPayment()">
+            <p id="LL">Odoslaná Platba</p>
+            <div class="test">
+                <p id="ST">Prímateľ : M. Štefaňák</p> 
+                <p id="ST">Iban : SK44 1100 0000 0087 4123 7735</p>
+            </div>
+            <p id="ST">- 75.50€</p>
+        </li>
+        <li class="prijata" onclick="openReceivedPayment()">
+            <p id="LL">Prijatá Platba</p>
+            <div class="test">
+                <p id="ST">Odosielateľ : Praca s.r.o. </p> 
+                <p id="ST"> Iban : SK57 2200 0000 0062 5487 9653</p>
+            </div>
+            <p id="ST">+ 120.50€</p>
+        </li>
+        <li class="odoslana" onclick="openSendPayment()">
+            <p id="LL">Odoslaná Platba</p>
+            <div class="test">
+                <p id="ST">Prímateľ : M. Štefaňák</p> 
+                <p id="ST">Iban : SK44 1100 0000 0087 4123 7735</p>
+            </div>
+            <p id="ST">- 75.50€</p>
+        </li>
+        <li class="prijata" onclick="openReceivedPayment()">
+            <p id="LL">Prijatá Platba</p>
+            <div class="test">
+                <p id="ST">Odosielateľ : Praca s.r.o. </p> 
+                <p id="ST"> Iban : SK57 2200 0000 0062 5487 9653</p>
+            </div>
+            <p id="ST">+ 120.50€</p>
+        </li>
+        <li class="odoslana" onclick="openSendPayment()">
+            <p id="LL">Odoslaná Platba</p>
+            <div class="test">
+                <p id="ST">Prímateľ : M. Štefaňák</p> 
+                <p id="ST">Iban : SK44 1100 0000 0087 4123 7735</p>
+            </div>
+            <p id="ST">- 75.50€</p>
+        </li>
+    </ul>
+</div>
+
+<footer>
+    <p>&copy; 2023 Pigi Bank. All rights reserved.</p>
+  </footer>
+
+</body>
